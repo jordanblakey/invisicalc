@@ -1,7 +1,14 @@
 :root { 
+    /* Layout */
+    --display-font-size: 48px;
     --color-window-background: #eee;
     --color-display-background: #246;
     --color-display-text-color: #8aa;
+    
+    /* Buttons */
+    --button-font-size: 36px;
+    --color-button-text-color: #222;
+    --color-button-text-color-reversed: #fff;
     --color-number-button-background: #ccc;
     --color-operator-button-background: #e60;
     --color-special-button-background: #ccc;
@@ -17,9 +24,8 @@ window {
 .display {
     background-color: var(--color-display-background);
     color: var(--color-display-text-color);
-    font-size: 48px;
+    font-size: var(--display-font-size);
     padding: 10px;
-    /* margin: 10px; */
     border-radius: 4px;
     margin-bottom: 4px;
 }
@@ -27,35 +33,22 @@ window {
 /* Buttons */
 button {
     margin: 0px;
-    font-size: 36px;
+    font-size: var(--button-font-size);
     border: none;
     border-radius: 4px;
 }
 
 .number {
     background: var(--color-number-button-background);
-    color: black;    
+    color: var(--color-button-text-color);    
 }
 
 .operator {
     background: var(--color-operator-button-background);
-    color: white;
+    color: var(--color-button-text-color-reversed);
 }
 
 .special {
     background: var(--color-special-button-background);
-    color: black;
+    color: var(--color-button-text-color);
 }
-/* Buttons: Removed custom styling to use system standard */
-/* 
-button {
-   ...
-}
-*/
-
-/* Helper helper classes if we still want some differentiation, 
-   but user asked for "System Standard", so disabling these too 
-   or giving them very minimal tweaks if needed. 
-   Actually, let's keep the Buttons expanding if we resize? 
-   No, just standard look.
-*/

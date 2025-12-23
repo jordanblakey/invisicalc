@@ -11,13 +11,27 @@ DEFAULT_WINDOW_SIZE = (520, 400)
 class CalculatorWindow(Gtk.ApplicationWindow):
     def __init__(self, app):
         super().__init__(application=app)
-        self.set_title("invisicalc-83")
+        self.set_title("invisicalc")
         self.set_default_size(*DEFAULT_WINDOW_SIZE)
         self.set_resizable(True)
+
+        # Set up icon
+        display = self.get_display()
+        icon_theme = Gtk.IconTheme.get_for_display(display)
+        base_path = os.path.dirname(os.path.realpath(__file__))
+        icon_path = base_path
+        
+        icon_theme.add_search_path(icon_path)
+        self.set_icon_name("invisicalc_icon")
 
         # Main vertical box
         main_box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=0)
         self.set_child(main_box)
+
+        # Key Controller
+        key_controller = Gtk.EventControllerKey()
+        key_controller.connect("key-pressed", self.on_key_pressed)
+        self.add_controller(key_controller)
 
         # Load CSS
         self.load_css()
@@ -60,16 +74,15 @@ class CalculatorWindow(Gtk.ApplicationWindow):
                 button.add_css_class(cls)
             button.set_hexpand(True)
             button.set_vexpand(True)
+            button.set_can_focus(False) # Disable focus so key events go to the window controller
             grid.attach(button, col, row, width, height)
             button.connect("clicked", self.on_button_clicked, label)
 
     def load_css(self):
         css_provider = Gtk.CssProvider()
         try:
-            css_path = 'style.css'
-            if getattr(sys, 'frozen', False):
-                # If bundled, look in the temporary data folder
-                css_path = os.path.join(sys._MEIPASS, 'style.css')
+            base_path = os.path.dirname(os.path.realpath(__file__))
+            css_path = os.path.join(base_path, 'style.css')
             
             css_provider.load_from_path(css_path)
             Gtk.StyleContext.add_provider_for_display(
@@ -104,9 +117,45 @@ class CalculatorWindow(Gtk.ApplicationWindow):
         
         self.display.set_text(self.current_expression)
 
+    def on_key_pressed(self, controller, keyval, keycode, state):
+        key_map = {
+            Gdk.KEY_0: '0', Gdk.KEY_KP_0: '0',
+            Gdk.KEY_1: '1', Gdk.KEY_KP_1: '1',
+            Gdk.KEY_2: '2', Gdk.KEY_KP_2: '2',
+            Gdk.KEY_3: '3', Gdk.KEY_KP_3: '3',
+            Gdk.KEY_4: '4', Gdk.KEY_KP_4: '4',
+            Gdk.KEY_5: '5', Gdk.KEY_KP_5: '5',
+            Gdk.KEY_6: '6', Gdk.KEY_KP_6: '6',
+            Gdk.KEY_7: '7', Gdk.KEY_KP_7: '7',
+            Gdk.KEY_8: '8', Gdk.KEY_KP_8: '8',
+            Gdk.KEY_9: '9', Gdk.KEY_KP_9: '9',
+            Gdk.KEY_period: '.', Gdk.KEY_KP_Decimal: '.',
+            Gdk.KEY_plus: '+', Gdk.KEY_KP_Add: '+',
+            Gdk.KEY_minus: '-', Gdk.KEY_KP_Subtract: '-',
+            Gdk.KEY_asterisk: '×', Gdk.KEY_KP_Multiply: '×',
+            Gdk.KEY_slash: '÷', Gdk.KEY_KP_Divide: '÷',
+            Gdk.KEY_Return: '=', Gdk.KEY_KP_Enter: '=', Gdk.KEY_equal: '=',
+            Gdk.KEY_BackSpace: '←',
+            Gdk.KEY_Escape: 'C',
+            Gdk.KEY_c: 'C', Gdk.KEY_C: 'C',
+        }
+
+        # Check for Quit shortcuts (Ctrl+Q, Ctrl+W)
+        if state & Gdk.ModifierType.CONTROL_MASK:
+            if keyval == Gdk.KEY_q or keyval == Gdk.KEY_w:
+                self.close()
+                return True
+
+        if keyval in key_map:
+            label = key_map[keyval]
+            self.on_button_clicked(None, label)
+            return True
+        
+        return False
+
 class CalculatorApp(Gtk.Application):
     def __init__(self):
-        super().__init__(application_id="org.example.calculator.test_v1",
+        super().__init__(application_id="org.jordanblakey.invisicalc.v1",
                          flags=Gio.ApplicationFlags.FLAGS_NONE)
 
     def do_activate(self):
