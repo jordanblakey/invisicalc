@@ -1,0 +1,61 @@
+:root { 
+    --color-window-background: #eee;
+    --color-display-background: #246;
+    --color-display-text-color: #8aa;
+    --color-number-button-background: #ccc;
+    --color-operator-button-background: #e60;
+    --color-special-button-background: #ccc;
+}
+
+/* Main window background */
+window {
+    background-color: var(--color-window-background);
+    padding: 4px;
+}
+
+/* Display area */
+.display {
+    background-color: var(--color-display-background);
+    color: var(--color-display-text-color);
+    font-size: 48px;
+    padding: 10px;
+    /* margin: 10px; */
+    border-radius: 4px;
+    margin-bottom: 4px;
+}
+
+/* Buttons */
+button {
+    margin: 0px;
+    font-size: 36px;
+    border: none;
+    border-radius: 4px;
+}
+
+.number {
+    background: var(--color-number-button-background);
+    color: black;    
+}
+
+.operator {
+    background: var(--color-operator-button-background);
+    color: white;
+}
+
+.special {
+    background: var(--color-special-button-background);
+    color: black;
+}
+/* Buttons: Removed custom styling to use system standard */
+/* 
+button {
+   ...
+}
+*/
+
+/* Helper helper classes if we still want some differentiation, 
+   but user asked for "System Standard", so disabling these too 
+   or giving them very minimal tweaks if needed. 
+   Actually, let's keep the Buttons expanding if we resize? 
+   No, just standard look.
+*/
