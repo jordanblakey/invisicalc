@@ -1,6 +1,6 @@
-# Invisicalc 83
+# invisicalc
 
-A sleek, keyboard-friendly calculator application built with Python and GTK4.
+A sleek, keyboard-friendly calculator application for Gnome built with Python and GTK4. Designed to be unobtrusive and aesthetically pleasing, it features a NumPad-first design, proper desktop integration, and a clean interface.
 
 ## Features
 

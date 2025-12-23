@@ -65,8 +65,8 @@ deb:
 	echo "License: MIT" >> deb_dist/DEBIAN/control
 	echo "Homepage: https://github.com/jordanblakey/invisicalc" >> deb_dist/DEBIAN/control
 	echo "Description: A minimal, invisible-style calculator" >> deb_dist/DEBIAN/control
-	echo " A fully featured calculator application built with Python and GTK4." >> deb_dist/DEBIAN/control
-	echo " Designed to be unobtrusive and aesthetically pleasing." >> deb_dist/DEBIAN/control
+	echo " A sleek, keyboard-friendly calculator application for Gnome built with Python and GTK4." >> deb_dist/DEBIAN/control
+	echo " Designed to be unobtrusive and aesthetically pleasing, it features a NumPad-first design, proper desktop integration, and a clean interface." >> deb_dist/DEBIAN/control
 	
 	# Build Package
 	dpkg-deb --root-owner-group --build deb_dist invisicalc.deb
