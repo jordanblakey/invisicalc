@@ -28,7 +28,6 @@ This creates a standard system package that is easy to install and remove.
     sudo dpkg -i invisicalc.deb
     ```
 
-
 ## Uninstallation
 
 ### If installed via Debian Package (.deb)
@@ -36,8 +35,6 @@ This creates a standard system package that is easy to install and remove.
 ```bash
 sudo apt remove invisicalc
 ```
-
-
 
 ## Development
 

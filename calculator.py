@@ -18,10 +18,12 @@ class CalculatorWindow(Gtk.ApplicationWindow):
         # Set up icon
         display = self.get_display()
         icon_theme = Gtk.IconTheme.get_for_display(display)
-        base_path = os.path.dirname(os.path.realpath(__file__))
-        icon_path = base_path
         
-        icon_theme.add_search_path(icon_path)
+        # Add local path for development, but system paths are checked by default
+        base_path = os.path.dirname(os.path.realpath(__file__))
+        if os.path.exists(os.path.join(base_path, "invisicalc_icon.svg")):
+            icon_theme.add_search_path(base_path)
+        
         self.set_icon_name("invisicalc_icon")
 
         # Main vertical box
