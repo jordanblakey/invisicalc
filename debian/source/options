@@ -1,0 +1,5 @@
+# Ignore files that aren't pure source code when generating the source tarball
+extend-diff-ignore = README.md
+extend-diff-ignore = /usr/bin/invisicalc
+extend-diff-ignore = /usr/share/doc/invisicalc/changelog.Debian.gz
+extend-diff-ignore = Makefile

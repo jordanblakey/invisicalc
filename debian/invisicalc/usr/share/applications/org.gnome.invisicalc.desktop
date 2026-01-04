@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=invisicalc
+Exec=invisicalc
+Icon=org.gnome.invisicalc
+Terminal=false
+Type=Application
+Categories=Utility;
+Keywords=GTK;
+StartupNotify=true
+DBusActivatable=true

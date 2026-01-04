@@ -1,0 +1,13 @@
+Package: invisicalc-dbgsym
+Package-Type: ddeb
+Source: invisicalc
+Version: 0.1.0-1ubuntu4
+Auto-Built-Package: debug-symbols
+Architecture: amd64
+Maintainer: Your Name <your.email@example.com>
+Installed-Size: 47
+Depends: invisicalc (= 0.1.0-1ubuntu4)
+Section: debug
+Priority: optional
+Description: debug symbols for invisicalc
+Build-Ids: a74b65b5922c57a92ad6c4e4d4b730bf639ca318

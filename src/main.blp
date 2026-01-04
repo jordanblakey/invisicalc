@@ -1,0 +1,352 @@
+using Gtk 4.0;
+using Adw 1;
+
+template $InvisicalcWindow : Adw.ApplicationWindow {
+  default-width: 400;
+  default-height: 600;
+  title: _("invisicalc");
+
+  EventControllerKey {
+    propagation-phase: capture;
+    key-pressed => $on_key_pressed();
+    key-released => $on_key_released();
+  }
+
+  content: Adw.ToolbarView {
+    [top]
+    Adw.HeaderBar {
+      [end]
+      MenuButton button_menu {
+        menu-model: menu_app;
+        icon-name: "open-menu-symbolic";
+        primary: true;
+      }
+    }
+
+    Grid keypad {
+      margin-start: 4;
+      margin-end: 4;
+      margin-bottom: 4;
+      row-spacing: 4;
+      column-spacing: 4;
+      row-homogeneous: true;
+      column-homogeneous: true;
+      
+      Entry display {
+
+        input-purpose: free_form;
+        input-hints: no_spellcheck;
+        hexpand: true;
+        vexpand: true;
+        xalign: 1.0;
+        margin-bottom: 2;
+        placeholder-text: _("");
+        styles ["display"]
+        can-focus: false;
+
+        layout {
+          row: -3;
+          column: 0;
+          column-span: 4;
+          row-span: 2;
+        }
+      }
+
+      Button back {
+        layout {
+          row: -1;
+          column: 0;
+        }
+
+        styles [
+          "opaque",
+        ]
+
+        name: "back";
+        label: _("←");
+        clicked => $on_back_clicked();
+      }
+
+      Button exponent {
+        layout {
+          row: -1;
+          column: 1;
+        }
+
+        styles [
+          "opaque",
+        ]
+
+        name: "exponent";
+        label: _("^");
+        clicked => $on_input_clicked();
+      }
+
+      Button left_parenthesis {
+        layout {
+          row: -1;
+          column: 2;
+        }
+
+        styles [
+          "opaque",
+        ]
+
+        name: "left_parenthesis";
+        label: _("(");
+        clicked => $on_input_clicked();
+      }
+
+
+      Button right_parenthesis {
+        layout {
+          row: -1;
+          column: 3;
+        }
+
+        styles [
+          "opaque",
+        ]
+
+        name: "right_parenthesis";
+        label: _(")");
+        clicked => $on_input_clicked();
+      }
+
+
+
+      Button clear {
+        layout {
+          row: 0;
+          column: 0;
+        }
+
+        styles [
+          "opaque",
+        ]
+
+        hexpand: true;
+        vexpand: true;
+        name: "clear";
+        label: _("C");
+        clicked => $on_clear_clicked();
+      }
+
+      Button divide {
+        layout {
+          row: 0;
+          column: 1;
+        }
+
+        styles [
+          "opaque",
+        ]
+
+        name: "divide";
+        label: _("÷");
+        clicked => $on_input_clicked();
+      }
+
+      Button multiply {
+        layout {
+          row: 0;
+          column: 2;
+        }
+
+        styles [
+          "opaque",
+        ]
+
+        name: "multiply";
+        label: _("×");
+        clicked => $on_input_clicked();
+      }
+
+      Button subtract {
+        layout {
+          row: 0;
+          column: 3;
+        }
+
+        styles [
+          "opaque",
+        ]
+
+        name: "subtract";
+        label: _("-");
+        clicked => $on_input_clicked();
+      }
+
+      Button seven {
+        layout {
+          row: 1;
+          column: 0;
+        }
+
+        name: "seven";
+        label: _("7");
+        clicked => $on_input_clicked();
+      }
+
+      Button eight {
+        layout {
+          row: 1;
+          column: 1;
+        }
+
+        name: "eight";
+        label: _("8");
+        clicked => $on_input_clicked();
+      }
+
+      Button nine {
+        layout {
+          row: 1;
+          column: 2;
+        }
+
+        name: "nine";
+        label: _("9");
+        clicked => $on_input_clicked();
+      }
+
+
+
+      Button add {
+        layout {
+          row: 1;
+          column: 3;
+          row-span:2;
+        }
+
+        styles [
+          "opaque",
+        ]
+
+        name: "add";
+        label: _("+");
+        clicked => $on_input_clicked();
+      }
+
+
+      Button four {
+        layout {
+          row: 2;
+          column: 0;
+        }
+
+        name: "four";
+        label: _("4");
+        clicked => $on_input_clicked();
+      }
+
+      Button five {
+        layout {
+          row: 2;
+          column: 1;
+        }
+
+        name: "five";
+        label: _("5");
+        clicked => $on_input_clicked();
+      }
+
+      Button six {
+        layout {
+          row: 2;
+          column: 2;
+        }
+
+        name: "six";
+        label: _("6");
+        clicked => $on_input_clicked();
+      }
+
+      Button one {
+        layout {
+          row: 4;
+          column: 0;
+        }
+
+        name: "one";
+        label: _("1");
+        clicked => $on_input_clicked();
+      }
+
+      Button two {
+        layout {
+          row: 4;
+          column: 1;
+        }
+
+        name: "two";
+        label: _("2");
+        clicked => $on_input_clicked();
+      }
+
+      Button three {
+        layout {
+          row: 4;
+          column: 2;
+        }
+
+        name: "three";
+        label: _("3");
+        clicked => $on_input_clicked();
+      }
+
+      Button equals {
+        layout {
+          row: 4;
+          column: 3;
+          row-span: 2;
+        }
+
+        styles [
+          "suggested-action",
+        ]
+
+        name: "equals";
+        label: _("=");
+        clicked => $on_equal_clicked();
+      }
+
+      Button zero {
+        layout {
+          row: 5;
+          column: 0;
+          column-span: 2;
+        }
+
+        name: "zero";
+        label: _("0");
+        clicked => $on_input_clicked();
+      }
+
+      Button decimal {
+        layout {
+          row: 5;
+          column: 2;
+        }
+
+        name: "decimal";
+        label: _(".");
+        clicked => $on_input_clicked();
+      }
+    }
+  };
+}
+
+menu menu_app {
+  section {
+    item {
+      label: _("Keyboard Shortcuts");
+      action: "app.shortcuts";
+    }
+
+    item {
+      label: _("About My App");
+      action: "app.about";
+    }
+  }
+}

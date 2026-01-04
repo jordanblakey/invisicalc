@@ -1,0 +1,8 @@
+# List of source files containing translatable strings.
+# Please keep this file sorted alphabetically.
+data/org.gnome.invisicalc.desktop.in
+data/org.gnome.invisicalc.metainfo.xml.in
+data/org.gnome.invisicalc.gschema.xml
+src/main.c
+src/invisicalc-window.c
+src/invisicalc-window.ui

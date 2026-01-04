@@ -1,0 +1,3 @@
+[D-BUS Service]
+Name=org.gnome.invisicalc
+Exec=@bindir@/invisicalc --gapplication-service

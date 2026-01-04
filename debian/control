@@ -1,0 +1,16 @@
+Source: invisicalc
+Section: gnome
+Priority: optional
+Maintainer: Your Name <your.email@example.com>
+Build-Depends: debhelper-compat (= 13), meson, libgtk-4-dev, libadwaita-1-dev
+Standards-Version: 4.6.2
+Homepage: https://example.com/invisicalc
+Vcs-Browser: https://example.com/invisicalc/
+Vcs-Git: https://example.com/invisicalc.git
+
+Package: invisicalc
+Architecture: amd64
+Depends: ${shlibs:Depends}, ${misc:Depends}, libgtk-4-1, libadwaita-1-0
+Description: Simple calculator for GNOME.
+ This package provides a basic calculator application
+ built with GTK4 and Libadwaita.

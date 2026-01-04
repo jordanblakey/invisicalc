@@ -1,0 +1,44 @@
+Description: <short summary of the patch>
+ TODO: Put a short summary on the line above and replace this paragraph
+ with a longer explanation of this change. Complete the meta-information
+ with other relevant fields (see below for details). To make it easier, the
+ information below has been extracted from the changelog. Adjust it or drop
+ it.
+ .
+ invisicalc (0.1.0-1ubuntu4) UNRELEASED; urgency=medium
+ .
+   [ invisible ]
+   * Initial release.
+   *
+ .
+   [ Jordan Blakey ]
+   *
+   *
+   *
+Author: Jordan Blakey <jordan.t.blakey@gmail.com>
+
+---
+The information above should follow the Patch Tagging Guidelines, please
+checkout https://dep.debian.net/deps/dep3/ to learn about the format. Here
+are templates for supplementary fields that you might want to add:
+
+Origin: (upstream|backport|vendor|other), (<patch-url>|commit:<commit-id>)
+Bug: <upstream-bugtracker-url>
+Bug-Debian: https://bugs.debian.org/<bugnumber>
+Bug-Ubuntu: https://launchpad.net/bugs/<bugnumber>
+Forwarded: (no|not-needed|<patch-forwarded-url>)
+Applied-Upstream: <version>, (<commit-url>|commit:<commid-id>)
+Reviewed-By: <name and email of someone who approved/reviewed the patch>
+Last-Update: 2026-01-03
+
+--- invisicalc-0.1.0.orig/src/invisicalc-application.c
++++ invisicalc-0.1.0/src/invisicalc-application.c
+@@ -85,7 +85,7 @@ invisicalc_application_about_action (GSi
+ 	adw_show_about_dialog (GTK_WIDGET (window),
+ 	                       "application-name", "invisicalc",
+ 	                       "application-icon", "org.gnome.invisicalc",
+-	                       "developer-name", "invisible",
++	                       "developer-name", "invisible!",
+ 	                       "translator-credits", _("translator-credits"),
+ 	                       "version", "0.1.0",
+ 	                       "developers", developers,

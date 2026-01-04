@@ -1,0 +1,275 @@
+using Gtk 4.0;
+using Adw 1;
+
+Adw.Window window {
+  default-width: 400;
+  default-height: 600;
+  title: _("invisicalc");
+
+  content: Adw.ToolbarView {
+    [top]
+    Adw.HeaderBar {
+      [end]
+      MenuButton button_menu {
+        menu-model: menu_app;
+        icon-name: "open-menu-symbolic";
+        primary: true;
+      }
+    }
+
+    Grid {
+      margin-start: 4;
+      margin-end: 4;
+      margin-bottom: 4;
+      row-spacing: 2;
+      column-spacing: 2;
+      row-homogeneous: true;
+      column-homogeneous: true;
+
+      
+      Entry display {
+
+        input-purpose: free_form;
+        input-hints: no_spellcheck;
+        hexpand: true;
+        vexpand: true;
+        margin-bottom: 2;
+        placeholder-text: _("2+2");
+        styles ["display"]
+
+        layout {
+          row: -2;
+          column: 0;
+          column-span: 4;
+          row-span: 2;
+        }
+      }
+
+      Button clear {
+        layout {
+          row: 0;
+          column: 0;
+        }
+
+        styles [
+          "opaque",
+        ]
+
+        hexpand: true;
+        vexpand: true;
+        name: "clear";
+        label: _("C");
+      }
+
+      Button back {
+        layout {
+          row: 0;
+          column: 1;
+        }
+
+        styles [
+          "opaque",
+        ]
+
+        name: "back";
+        label: _("←");
+      }
+
+      Button divide {
+        layout {
+          row: 0;
+          column: 2;
+        }
+
+        styles [
+          "opaque",
+        ]
+
+        name: "back";
+        label: _("÷");
+      }
+
+      Button multiply {
+        layout {
+          row: 0;
+          column: 3;
+        }
+
+        styles [
+          "opaque",
+        ]
+
+        name: "multiply";
+        label: _("×");
+      }
+
+      Button seven {
+        layout {
+          row: 1;
+          column: 0;
+        }
+
+        name: "seven";
+        label: _("7");
+      }
+
+      Button eight {
+        layout {
+          row: 1;
+          column: 1;
+        }
+
+        name: "eight";
+        label: _("8");
+      }
+
+      Button nine {
+        layout {
+          row: 1;
+          column: 2;
+        }
+
+        name: "9";
+        label: _("9");
+      }
+
+      Button subtract {
+        layout {
+          row: 1;
+          column: 3;
+        }
+
+        styles [
+          "opaque",
+        ]
+
+        name: "subtract";
+        label: _("-");
+      }
+
+      Button four {
+        layout {
+          row: 2;
+          column: 0;
+        }
+
+        name: "seven";
+        label: _("4");
+      }
+
+      Button five {
+        layout {
+          row: 2;
+          column: 1;
+        }
+
+        name: "eight";
+        label: _("5");
+      }
+
+      Button six {
+        layout {
+          row: 2;
+          column: 2;
+        }
+
+        name: "six";
+        label: _("6");
+      }
+
+      Button add {
+        layout {
+          row: 2;
+          column: 3;
+        }
+
+        styles [
+          "opaque",
+        ]
+
+        name: "add";
+        label: _("+");
+      }
+
+      Button one {
+        layout {
+          row: 4;
+          column: 0;
+        }
+
+        name: "one";
+        label: _("1");
+      }
+
+      Button two {
+        layout {
+          row: 4;
+          column: 1;
+        }
+
+        name: "two";
+        label: _("2");
+      }
+
+      Button three {
+        layout {
+          row: 4;
+          column: 2;
+        }
+
+        name: "3";
+        label: _("3");
+      }
+
+      Button equals {
+        layout {
+          row: 4;
+          column: 3;
+          row-span: 2;
+        }
+
+        styles [
+          "suggested-action",
+        ]
+
+        name: "equals";
+        label: _("=");
+      }
+
+      Button zero {
+        layout {
+          row: 5;
+          column: 0;
+          column-span: 2;
+        }
+
+        name: "zero";
+        label: _("0");
+      }
+
+      Button decimal {
+        layout {
+          row: 5;
+          column: 2;
+        }
+
+        name: "decimal";
+        label: _(".");
+      }
+    }
+  };
+}
+
+menu menu_app {
+  section {
+    item {
+      label: _("Keyboard Shortcuts");
+      action: "app.shortcuts";
+    }
+
+    item {
+      label: _("About My App");
+      action: "app.about";
+    }
+  }
+}

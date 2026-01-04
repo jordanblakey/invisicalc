@@ -1,6 +1,3 @@
-build/
-dist/
-*.spec
-__pycache__
-venv
-*.deb
+deb-build/
+_build/
+*.idx

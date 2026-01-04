@@ -1,0 +1,60 @@
+.display {
+    color: #88aaaa;
+    background-color: #224466;
+    font-size: 48px;
+}
+
+.display selection {
+    background-color: #88aaaa;
+    color: #224466;
+}
+
+
+button.opaque {
+    background-color: #d3d3d3;
+}
+
+button.active-key {
+    background-color: #bbbbbb;
+}
+
+button {
+    transition: none;
+}
+
+#seven,
+#eight,
+#nine,
+#four,
+#five,
+#six,
+#one,
+#two,
+#three,
+#zero {
+    /* background: #ff0000; */
+    font-size: 24px;
+}
+
+#clear,
+#back,
+#divide,
+#multiply,
+#subtract,
+#add {
+    /* background: #00ff00; */
+    font-size: 24px;
+    font-weight: 300;
+}
+
+#equals {
+    /* background: #0000ff; */
+    font-size: 24px;
+    font-weight: 300;
+}
+
+#decimal {
+    /* background: #ffff00; */
+    font-size: 24px;
+    font-weight: 300;
+}

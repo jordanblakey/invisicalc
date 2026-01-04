@@ -1,0 +1,12 @@
+Package: invisicalc
+Version: 0.1.0-1ubuntu4
+Architecture: amd64
+Maintainer: Your Name <your.email@example.com>
+Installed-Size: 69
+Depends: libadwaita-1-0 (>= 1.5~beta), libc6 (>= 2.34), libglib2.0-0t64 (>= 2.80.0), libgtk-4-1 (>= 4.0.0), dconf-gsettings-backend | gsettings-backend
+Section: gnome
+Priority: optional
+Homepage: https://example.com/invisicalc
+Description: Simple calculator for GNOME.
+ This package provides a basic calculator application
+ built with GTK4 and Libadwaita.

@@ -1,0 +1,87 @@
+Description: adds text to manpage in roff format
+ TODO: Put a short summary on the line above and replace this paragraph
+ with a longer explanation of this change. Complete the meta-information
+ with other relevant fields (see below for details). To make it easier, the
+ information below has been extracted from the changelog. Adjust it or drop
+ it.
+ .
+ invisicalc (0.1.0-1ubuntu3) UNRELEASED; urgency=medium
+ .
+   [ invisible ]
+   * Initial release.
+   *
+ .
+   [ Jordan Blakey ]
+   *
+   *
+Author: Jordan Blakey <jordan.t.blakey@gmail.com>
+
+---
+The information above should follow the Patch Tagging Guidelines, please
+checkout https://dep.debian.net/deps/dep3/ to learn about the format. Here
+are templates for supplementary fields that you might want to add:
+
+Origin: (upstream|backport|vendor|other), (<patch-url>|commit:<commit-id>)
+Bug: <upstream-bugtracker-url>
+Bug-Debian: https://bugs.debian.org/<bugnumber>
+Bug-Ubuntu: https://launchpad.net/bugs/<bugnumber>
+Forwarded: (no|not-needed|<patch-forwarded-url>)
+Applied-Upstream: <version>, (<commit-url>|commit:<commid-id>)
+Reviewed-By: <name and email of someone who approved/reviewed the patch>
+Last-Update: 2026-01-03
+
+--- /dev/null
++++ invisicalc-0.1.0/man/invisicalc.1
+@@ -0,0 +1,52 @@
++.\" The first line sets the Title (INVISICALC), section (1), Date, Source (e.g., GNOME), and Manual section (User Commands)
++.TH INVISICALC 1 "January 03, 2026" "GNOME" "User Commands"
++
++.\" NAME section: The command name followed by a one-line description
++.SH NAME
++invisicalc \- a simple calculator for the GNOME desktop
++
++.\" SYNOPSIS section: Describes the formal syntax for running the command
++.SH SYNOPSIS
++.B invisicalc
++[
++.I options
++]
++[
++.I file
++]...
++
++.\" DESCRIPTION section: A full explanation of the program's functionality
++.SH DESCRIPTION
++.B invisicalc
++is a user-friendly calculator application built with GTK4 and Libadwaita. It provides basic arithmetic functions in a clean, integrated interface within the GNOME desktop environment.
++
++.\" OPTIONS section: Lists and explains command-line arguments
++.SH OPTIONS
++
++.TP
++.B \-\-version
++Display the application version and exit.
++
++.TP
++.B \-h, \-\-help
++Show the standard GTK help options.
++
++.\" EXAMPLES section: How to use the program in practice
++.SH EXAMPLES
++.B invisicalc
++&
++
++.br
++Launch the calculator in the background.
++
++.\" SEE ALSO section: A comma-separated list of related man pages
++.SH "SEE ALSO"
++gnome-calculator(1), gtk4(7), libadwaita(1)
++
++.\" BUGS section: A place to list known issues or reporting information
++.SH BUGS
++Report bugs to the issue tracker at <https://github.com/jordanblakey/invisicalc/issues>.
++
++.\" AUTHOR section: Optional, contains author information
++.SH AUTHOR
++Jordan Blakey <jordan.t.blakey@gmail.com>

@@ -1,0 +1,11 @@
+.display{
+  color: #88aaaa;
+  background-color: #224466;
+  font-size: 40px;
+}
+
+#clear, 
+#back, 
+#divide,
+#multiply, #subtract, #add{
+}

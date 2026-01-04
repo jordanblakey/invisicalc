@@ -1,0 +1,10 @@
+56893f7c8fe35a19cb9436b052ff07e0  usr/bin/invisicalc
+686308f8fc3174715c5b2d05c3e8580d  usr/share/applications/org.gnome.invisicalc.desktop
+d1611e25e9c8393c2ca2a62ca50fa3b0  usr/share/dbus-1/services/org.gnome.invisicalc.service
+bd617939f06afafd924e9daeecae2447  usr/share/doc/invisicalc/changelog.Debian.gz
+cc43bdcfa975712ea7a75381ecfa7753  usr/share/doc/invisicalc/copyright
+3f2f0e076b6b3e02aea6790c4537a5c0  usr/share/glib-2.0/schemas/org.gnome.invisicalc.gschema.xml
+a30acd7126f4027fd075430762e16807  usr/share/icons/hicolor/scalable/apps/org.gnome.invisicalc.svg
+4bef718a161052724388b87586151ef1  usr/share/icons/hicolor/symbolic/apps/org.gnome.invisicalc-symbolic.svg
+0b1bbff2dd0ffd5f19bdfa788036fa32  usr/share/man/man1/invisicalc.1.gz
+5200de748ba81f0cc5517d21af4d5a3a  usr/share/metainfo/org.gnome.invisicalc.metainfo.xml

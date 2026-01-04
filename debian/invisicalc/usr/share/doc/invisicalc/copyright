@@ -1,0 +1,8 @@
+Format: www.debian.org
+Upstream-Name: invisicalc
+Source: https://github.com/jordanblakey/invisicalc
+
+Files: *
+Copyright: 2026 Jordan Blakey <jordan.t.blakey@gmail.com>
+License: GPL-3.0-or-later
+# The full license text will be automatically picked up from /usr/share/common-licenses/
