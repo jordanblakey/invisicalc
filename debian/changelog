@@ -1,4 +1,4 @@
-invisicalc (0.1.1-1ubuntu18) UNRELEASED; urgency=medium
+invisicalc (1.1.0) questing; urgency=medium
 
   [ invisible ]
   * Initial release.
@@ -37,5 +37,6 @@ invisicalc (0.1.1-1ubuntu18) UNRELEASED; urgency=medium
   * Build via Makefile
   * Build via Makefile
   * Build via Makefile
+  * Release v1.1.0: Updated features, icon, and desktop integration.
 
- -- Jordan Blakey <jordan.t.blakey@gmail.com>  Sat, 03 Jan 2026 22:48:20 -0600
+ -- Jordan Blakey <jordan.t.blakey@gmail.com>  Sat, 03 Jan 2026 23:26:12 -0600
