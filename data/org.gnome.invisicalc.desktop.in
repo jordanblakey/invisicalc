@@ -9,4 +9,3 @@ Keywords=GTK;
 StartupNotify=true
 DBusActivatable=true
 StartupWMClass=org.gnome.invisicalc
-StartupWMClass=org.gnome.invisicalc
