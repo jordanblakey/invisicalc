@@ -28,10 +28,10 @@ int
 main (int   argc,
       char *argv[])
 {
-	g_unsetenv("GDK_BACKEND");
-
 	g_autoptr(InvisicalcApplication) app = NULL;
 	int ret;
+
+	g_unsetenv("GDK_BACKEND");
 
 	bindtextdomain (GETTEXT_PACKAGE, LOCALEDIR);
 	bind_textdomain_codeset (GETTEXT_PACKAGE, "UTF-8");

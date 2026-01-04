@@ -1,9 +1,10 @@
-invisicalc (1.1.0ubuntu2) UNRELEASED; urgency=medium
+invisicalc (1.1.0ubuntu3) UNRELEASED; urgency=medium
 
   * Build via Makefile
   * Build via Makefile
+  * Build via Makefile
 
- -- Jordan Blakey <jordan.t.blakey@gmail.com>  Sat, 03 Jan 2026 23:46:21 -0600
+ -- Jordan Blakey <jordan.t.blakey@gmail.com>  Sat, 03 Jan 2026 23:46:51 -0600
 
 invisicalc (1.1.0) questing; urgency=medium
 
